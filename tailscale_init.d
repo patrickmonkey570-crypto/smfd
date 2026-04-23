@@ -18,10 +18,10 @@ start_service() {
   config_get port "settings" port 41641
   config_get state_file "settings" state_file /etc/tailscale/tailscaled.state
 
-  /usr/sbin/tailscaled --cleanup
+  /data/tailscale/usr/sbin/tailscaled  --cleanup
 
   procd_open_instance
-  procd_set_param command /usr/sbin/tailscaled
+  procd_set_param command /data/tailscale/usr/sbin/tailscaled 
 
   # starting with v1.48.1 ENV variable is required to enable autodetection of iptables / nftables
   procd_set_param env TS_DEBUG_FIREWALL_MODE=auto
@@ -41,5 +41,5 @@ start_service() {
 }
 
 stop_service() {
-  /usr/sbin/tailscaled --cleanup
+  /data/tailscale/usr/sbin/tailscaled  --cleanup
 }
