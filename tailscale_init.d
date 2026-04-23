@@ -16,7 +16,7 @@ start_service() {
   config_get_bool std_out "settings" log_stdout 1
   config_get_bool std_err "settings" log_stderr 1
   config_get port "settings" port 41641
-  config_get state_file "settings" state_file /etc/tailscale/tailscaled.state
+  config_get state_file "settings" state_file /data/tailscale/etc/tailscale/tailscaled.state
 
   /data/tailscale/usr/sbin/tailscaled  --cleanup
 
