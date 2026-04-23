@@ -1,1 +1,1 @@
-/etc/tailscale/
+/data/tailscale/etc/tailscale
